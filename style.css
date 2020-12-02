@@ -3,7 +3,6 @@ html, body {
    height: 100%;
    padding: 0;
    margin: 0;
-   /* overflow: hidden; */
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -34,6 +33,7 @@ strong {
    cursor: pointer;
 }
 
+/* apparence du curseur */
 #_range::-webkit-slider-thumb {
    height: 20px;
    width: 45px;
