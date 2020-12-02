@@ -59,9 +59,9 @@ strong {
    margin-bottom: 10px;
 }
 
-/* @media screen and (orientation: landscape) {
+@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
 
    body {
       transform: rotate(270deg);
    }
-} */
+}
