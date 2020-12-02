@@ -58,3 +58,10 @@ strong {
    transform: skew(35deg);
    margin-bottom: 10px;
 }
+
+/* @media screen and (orientation: landscape) {
+
+   body {
+      transform: rotate(270deg);
+   }
+} */
