@@ -1,24 +1,56 @@
 <!DOCTYPE html>
-<html>
-    <title>Pilotage de volet</title>
+<html lang="fr" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="">
+      <link rel="stylesheet" href="style.css">
+      <title>Store</title>
+   </head>
+   <body>
+      <div class="fenetre">
+         <input id="_range" type="range" min="1" max="15" value="1" oninput="modif()" list="custom-list">
+         <div class="store">
+            <div class="latte"></div>
+         </div>
+      </div>
+   </body>
+   <script>
+      //variables
+      var range = document.getElementById('_range');
+      var store = document.getElementsByClassName('store')[0];
+      var latte = document.getElementsByClassName('latte')
 
-    
-    <body>
-        
-        
-        
-        <div class="container">
- 
-          <div class="range-slider">
-            <input type="range" orient="vertical" min="0" max="100" />
-          </div> 
-          
-          <p class="debug">DEBUG : <span class="volet-fermeture-valeur">VALEUR</span> </p>
-          
-        </div>
-                
-                
-        
-    </body>
+      //on appelle une première fois pour fermer le store lorsque qu'il n'y a qu'une seule latte
+      modif();
+
+      function modif() {
+         //on vide le nombre de latte à chaque modification de l'input range
+         if (range.value <= range.max-1) {
+            store.innerHTML = '';
+         }
+
+         for (var i = 0; i < range.value; i++) {
+            //on rajoute le nombre de latte correspondant à la valeur de l'input range sauf la dernière valeur qui
+            //correspondra au store refermé
+            if (range.value <= range.max-1) {
+               store.innerHTML += '<div class="latte"></div>';
+            }
+         }
+
+         //si il y a une ou toutes les lattes, alors le store est fermé sinon il est ouvert
+         if (range.value == 1 || range.value == 15) {
+            for (var i = 0; i < latte.length; i++) {
+               latte[i].style.transform = 'skew(0deg)';
+               latte[i].style.height = '38px';
+               latte[i].style.marginLeft = '0px';
+               latte[i].style.marginBottom = '2px';
+            }
+         } else {
+            for (var i = 0; i < latte.length; i++) {
+               latte[i].style.transform = 'skew(35deg)';
+            }
+         }
+      }
+   </script>
 </html>
-<!--La solution est sur https://codepen.io/jim005 -->
