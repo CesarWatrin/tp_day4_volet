@@ -35,7 +35,7 @@ strong {
 
 /* apparence du curseur */
 #_range::-webkit-slider-thumb {
-   height: 20px;
+   height: 30px;
    width: 45px;
    -webkit-appearance: none;
    background: #FF9300;
